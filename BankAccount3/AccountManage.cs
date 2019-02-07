@@ -31,9 +31,6 @@ namespace ClassSample
         /// <param name="e"></param>
         private void AccountManage_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(BankAccount.GetUsers().ToString());
-
-
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
             // 先に用意しておいた名義一覧Listについて、foreachでそれぞれの名前を使ってBankAccountを作成
             // 作ったBankAccountインスタンスはディクショナリー「accounts」に、氏名をキーにして入れておく。
