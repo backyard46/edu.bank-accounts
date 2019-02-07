@@ -142,3 +142,15 @@ namespace ClassSample
 名義名と口座をDictionaryで管理するところは同一ですが、名義を事前にList<String>で宣言することで、コンボボックス初期化やDictionaryへの情報登録を簡略化しています。こちらについても提示するかどうかは判断に任せます。
 
 ## BankAccount4
+名義と口座の割り当てに際して、BankAccount3で作成したListに対するForEachメソッドでDictionary初期化を行っています。方式は2通り。Actionデリゲートに匿名メソッドでDictionary.Addを割り当てて実行する方法と、ForEachの中でいきなりラムダ式による処理定義を書く方法の2通りを記述しています。
+難しい内容なのでこの時点で理解させる必要はありませんが、実装方法は多岐にわたることを示すために提示してもよいかもしれません。判断はお任せします。
+
+```cs
+// Actionデリゲートに匿名メソッドを割り当てて、それでusersリストに対してForEachで処理する方式
+Action<string> createAccount = (item) => { accounts.Add(item, new BankAccount(item, 500)); };
+users.ForEach(createAccount);
+```
+```cs
+// usersリストに対してForEachにラムダ式でAddを繰り返し処理する方式
+users.ForEach((item) => { accounts.Add(item, new BankAccount(item, 500)); });
+```
