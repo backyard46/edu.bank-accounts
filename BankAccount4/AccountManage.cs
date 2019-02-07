@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ClassSample
@@ -33,8 +29,14 @@ namespace ClassSample
         {
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
             // 取り出す際のキーは「苗字」。
+
+            // Actionデリゲートに匿名メソッドを割り当てて、それでusersリストに対してForEachで処理する方式
             Action<string> createAccount = (item) => { accounts.Add(item, new BankAccount(item, 500)); };
             users.ForEach(createAccount);
+
+            // こちらでも同じになる
+            // usersリストに対してForEachにラムダ式でAddを繰り返し処理する方式
+            // users.ForEach((item) => { accounts.Add(item, new BankAccount(item, 500)); });
 
             // コンボボックスに苗字を設定しておく。
             comboAccount.Items.AddRange(users.ToArray<string>());
