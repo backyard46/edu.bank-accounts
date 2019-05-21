@@ -83,7 +83,6 @@ namespace ClassSample
             }
         }
 
-
         /// <summary>
         /// 残高照会ボタン押下処理。
         /// </summary>
