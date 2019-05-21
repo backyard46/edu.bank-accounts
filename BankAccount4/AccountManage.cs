@@ -8,7 +8,7 @@ namespace ClassSample
     public partial class AccountManage : Form
     {
         // 口座名義人
-        List<string> users = new List<string> { "井口秀祐", "笠井美里", "菊池里沙子", "綿貫朱里" };
+        List<string> users = new List<string> { "常盤", "西山", "三浦" };
 
         // 口座情報を入れるDictionaryオブジェクト「accounts」の宣言。
         // 「名前」と「BankAccountのインスタンス」をペアでしまっておくと、名前で対応するインスタンスを取り出せる
@@ -19,12 +19,11 @@ namespace ClassSample
             InitializeComponent();
         }
 
-
         /// <summary>
         /// フォームロード時の処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void AccountManage_Load(object sender, EventArgs e)
         {
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
@@ -45,12 +44,11 @@ namespace ClassSample
             comboAccount.SelectedIndex = 0;
         }
 
-
         /// <summary>
         /// 入金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonDeposit_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -63,12 +61,11 @@ namespace ClassSample
             }
         }
 
-
         /// <summary>
         /// 出金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonWithdraw_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -90,8 +87,8 @@ namespace ClassSample
         /// <summary>
         /// 残高照会ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonShowTotal_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -102,6 +99,5 @@ namespace ClassSample
                 textTotal.Text = currentAccount.AccountName + " : " + currentAccount.AccountBalance.ToString("C");
             }
         }
-
     }
 }

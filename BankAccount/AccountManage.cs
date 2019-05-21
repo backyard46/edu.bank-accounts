@@ -11,51 +11,49 @@ namespace ClassSample
 {
     public partial class AccountManage : Form
     {
-
         // フォーム内で使う銀行口座4名分を作成
-        private BankAccount accountIguchi = new BankAccount();
-        private BankAccount accountKasai = new BankAccount();
-        private BankAccount accountKikuchi = new BankAccount();
-        private BankAccount accountWatanuki = new BankAccount();
+        private BankAccount accountTokiwa = new BankAccount();
+        private BankAccount accountNishiyama = new BankAccount();
+        private BankAccount accountMiura = new BankAccount();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountManage"/> class.
+        /// </summary>
         public AccountManage()
         {
             InitializeComponent();
         }
 
-
         /// <summary>
         /// フォームロード時の処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void AccountManage_Load(object sender, EventArgs e)
         {
-            comboAccount.Items.AddRange(new string[] { "井口", "笠井", "菊池", "綿貫" });
+            // コンボボックスに選択肢を設定する。
+            // new string[]……で文字列配列を作り、配列を元に選択肢を設定するAddRangeを使っています。
+            comboAccount.Items.AddRange(new string[] { "常盤", "西山", "三浦"});
         }
-
 
         /// <summary>
         /// コンボボックスの選択状況を見て扱う口座情報のインスタンスを返す。
         /// </summary>
-        /// <returns></returns>
+        /// <returns>選択されている口座のBankAccount型データ。</returns>
         private BankAccount GetCurrentAccount()
         {
             BankAccount result;
 
             switch (comboAccount.SelectedItem.ToString())
             {
-                case "井口":
-                    result = accountIguchi;
+                case "常盤":
+                    result = accountTokiwa;
                     break;
-                case "笠井":
-                    result = accountKasai;
+                case "西山":
+                    result = accountNishiyama;
                     break;
-                case "菊池":
-                    result = accountKikuchi;
-                    break;
-                case "綿貫":
-                    result = accountWatanuki;
+                case "三浦":
+                    result = accountMiura;
                     break;
                 default:
                     result = null;
@@ -64,12 +62,11 @@ namespace ClassSample
             return result;
         }
 
-
         /// <summary>
         /// 入金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonDeposit_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -82,12 +79,11 @@ namespace ClassSample
             }
         }
 
-
         /// <summary>
         /// 出金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonWithdraw_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -105,6 +101,11 @@ namespace ClassSample
             }
         }
 
+        /// <summary>
+        /// 残高照会ボタン押下処理。
+        /// </summary>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonShowTotal_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する

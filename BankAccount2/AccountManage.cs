@@ -31,17 +31,15 @@ namespace ClassSample
         {
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
             // 取り出す際のキーは「苗字」。
-            accounts.Add("井口", new BankAccount());
-            accounts.Add("笠井", new BankAccount());
-            accounts.Add("菊池", new BankAccount());
-            accounts.Add("綿貫", new BankAccount());
+            accounts.Add("常盤", new BankAccount());
+            accounts.Add("西山", new BankAccount());
+            accounts.Add("三浦", new BankAccount());
 
             // コンボボックスに苗字を設定しておく。
-            comboAccount.Items.AddRange(new string[] { "井口", "笠井", "菊池", "綿貫" });
+            comboAccount.Items.AddRange(new string[] { "常盤", "西山", "三浦"});
             // 無選択は許さない設定に
             comboAccount.SelectedIndex = 0;
         }
-
 
         /// <summary>
         /// 入金ボタン押下処理。
@@ -59,7 +57,6 @@ namespace ClassSample
                 currentAccount.Deposit(int.Parse(textKingaku.Text));
             }
         }
-
 
         /// <summary>
         /// 出金ボタン押下処理。
