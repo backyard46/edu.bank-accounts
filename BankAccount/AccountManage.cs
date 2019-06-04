@@ -33,7 +33,7 @@ namespace ClassSample
         {
             // コンボボックスに選択肢を設定する。
             // new string[]……で文字列配列を作り、配列を元に選択肢を設定するAddRangeを使っています。
-            comboAccount.Items.AddRange(new string[] { "常盤", "西山", "三浦"});
+            comboAccount.Items.AddRange(new string[] { "トキ", "ニシ", "ミウ"});
         }
 
         /// <summary>
@@ -46,13 +46,13 @@ namespace ClassSample
 
             switch (comboAccount.SelectedItem.ToString())
             {
-                case "常盤":
+                case "トキ":
                     result = accountTokiwa;
                     break;
-                case "西山":
+                case "ニシ":
                     result = accountNishiyama;
                     break;
-                case "三浦":
+                case "ミウ":
                     result = accountMiura;
                     break;
                 default:
