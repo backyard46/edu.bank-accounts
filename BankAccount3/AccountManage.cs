@@ -8,7 +8,7 @@ namespace ClassSample
     public partial class AccountManage : Form
     {
         // 口座名義人一覧をListオブジェクトに入れておく（コンボボックスの初期化や口座作成時に楽なので）
-        List<string> users = new List<string> { "常盤", "西山", "三浦" };
+        List<string> users = new List<string> { "トキ", "ニシ", "ミウ" };
 
         // 口座情報を入れるDictionaryオブジェクト「accounts」の宣言。
         // 「名前」と「BankAccountのインスタンス」をペアでしまっておくと、名前で対応するインスタンスを取り出せる
