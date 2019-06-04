@@ -8,7 +8,7 @@ namespace ClassSample
     public partial class AccountManage : Form
     {
         // 口座名義人
-        List<string> users = new List<string> { "常盤", "西山", "三浦" };
+        List<string> users = new List<string> { "トキ", "ニシ", "ミウ" };
 
         // 口座情報を入れるDictionaryオブジェクト「accounts」の宣言。
         // 「名前」と「BankAccountのインスタンス」をペアでしまっておくと、名前で対応するインスタンスを取り出せる
@@ -39,7 +39,6 @@ namespace ClassSample
 
             // コンボボックスに苗字を設定しておく。
             comboAccount.Items.AddRange(users.ToArray<string>());
-            //comboAccount.Items.AddRange(new string[] { "井口", "笠井", "菊池", "綿貫" });
             // 無選択は許さない設定に
             comboAccount.SelectedIndex = 0;
         }
