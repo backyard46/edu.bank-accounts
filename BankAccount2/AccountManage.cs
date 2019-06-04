@@ -31,12 +31,12 @@ namespace ClassSample
         {
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
             // 取り出す際のキーは「苗字」。
-            accounts.Add("常盤", new BankAccount());
-            accounts.Add("西山", new BankAccount());
-            accounts.Add("三浦", new BankAccount());
+            accounts.Add("トキ", new BankAccount());
+            accounts.Add("ニシ", new BankAccount());
+            accounts.Add("ミウ", new BankAccount());
 
             // コンボボックスに苗字を設定しておく。
-            comboAccount.Items.AddRange(new string[] { "常盤", "西山", "三浦"});
+            comboAccount.Items.AddRange(new string[] { "トキ", "ニシ", "ミウ"});
             // 無選択は許さない設定に
             comboAccount.SelectedIndex = 0;
         }
