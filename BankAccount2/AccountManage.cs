@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace ClassSample
 {
     public partial class AccountManage : Form
     {
-
         // 口座情報を入れるDictionaryオブジェクト「accounts」の宣言。
         // 「名前」と「BankAccountのインスタンス」をペアでしまっておくと、名前で対応するインスタンスを取り出せる
         private Dictionary<string, BankAccount> accounts = new Dictionary<string, BankAccount>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountManage"/> class.
+        /// </summary>
         public AccountManage()
         {
             InitializeComponent();
         }
 
-
         /// <summary>
         /// フォームロード時の処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void AccountManage_Load(object sender, EventArgs e)
         {
             // アカウント情報ディクショナリーaccountsに各アカウントのインスタンスを格納しておく。
@@ -44,8 +40,8 @@ namespace ClassSample
         /// <summary>
         /// 入金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonDeposit_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -61,8 +57,8 @@ namespace ClassSample
         /// <summary>
         /// 出金ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonWithdraw_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する
@@ -80,12 +76,11 @@ namespace ClassSample
             }
         }
 
-
         /// <summary>
         /// 残高照会ボタン押下処理。
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">イベント呼び出し元オブジェクト</param>
+        /// <param name="e">e</param>
         private void buttonShowTotal_Click(object sender, EventArgs e)
         {
             // コンボボックスで選択されている人に応じた口座インスタンスを取得する

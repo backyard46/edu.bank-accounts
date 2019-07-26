@@ -12,9 +12,9 @@ namespace ClassSample
     public partial class AccountManage : Form
     {
         // フォーム内で使う銀行口座4名分を作成
-        private BankAccount accountTokiwa = new BankAccount();
-        private BankAccount accountNishiyama = new BankAccount();
-        private BankAccount accountMiura = new BankAccount();
+        private BankAccount accountToki = new BankAccount();
+        private BankAccount accountNishi = new BankAccount();
+        private BankAccount accountMiu = new BankAccount();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountManage"/> class.
@@ -47,13 +47,13 @@ namespace ClassSample
             switch (comboAccount.SelectedItem.ToString())
             {
                 case "トキ":
-                    result = accountTokiwa;
+                    result = accountToki;
                     break;
                 case "ニシ":
-                    result = accountNishiyama;
+                    result = accountNishi;
                     break;
                 case "ミウ":
-                    result = accountMiura;
+                    result = accountMiu;
                     break;
                 default:
                     result = null;
